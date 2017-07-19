@@ -7,7 +7,7 @@
   "module": "build/module/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moravcik/typescript-node-starter.git"
+    "url": "git+https://github.com/moravcik/typescript-starter.git"
   },
   "author": "Michal Moravcik <michal.moravcik@solargis.com>",
   "license": "MIT",
@@ -53,9 +53,9 @@
     "tslib": "^1.6.0"
   },
   "bugs": {
-    "url": "https://github.com/moravcik/typescript-node-starter/issues"
+    "url": "https://github.com/moravcik/typescript-starter/issues"
   },
-  "homepage": "https://github.com/moravcik/typescript-node-starter#readme",
+  "homepage": "https://github.com/moravcik/typescript-starter#readme",
   "directories": {
     "example": "examples"
   }
