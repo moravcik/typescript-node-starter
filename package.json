@@ -1,5 +1,5 @@
 {
-  "name": "@solargis/typescript-node-starter",
+  "name": "@solargis/typescript-starter",
   "version": "1.4.6",
   "description": "A typescript starter for building javascript libraries and projects",
   "main": "build/main/index.js",
@@ -12,29 +12,18 @@
   "author": "Michal Moravcik <michal.moravcik@solargis.com>",
   "license": "MIT",
   "scripts": {
-    "info": "npm-scripts-info",
-    "build": "trash build && yarn build:main && yarn build:module",
+    "build": "trash build && npm run build:main && npm run build:module",
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
     "lint": "tslint --project . --type-check src/**/*.ts",
-    "docs": "yarn docs:html && opn build/docs/index.html",
+    "docs": "npm run docs:html && opn build/docs/index.html",
     "docs:html": "typedoc src/index.ts --excludePrivate --mode file --theme minimal --out build/docs",
     "docs:json": "typedoc --mode file --json build/docs/typedoc.json src/index.ts",
-    "docs:publish": "yarn docs:html && gh-pages -d build/docs",
+    "docs:publish": "npm run docs:html && gh-pages -d build/docs",
     "changelog": "standard-version",
-    "release": "yarn reset && yarn docs:publish && yarn changelog",
-    "reset": "git clean -dfx && git reset --hard && yarn"
-  },
-  "scripts-info": {
-    "info": "Display information about the scripts",
-    "build": "(Trash and re)build the library",
-    "lint": "Lint all typescript source files",
-    "docs": "Generate HTML API documentation and open it in a browser",
-    "docs:publish": "Generate HTML API documentation and push it to GitHub Pages",
-    "docs:json": "Generate API documentation in typedoc JSON format",
-    "changelog": "Bump package.json version, update CHANGELOG.md, tag a release",
-    "reset": "Delete all untracked files and reset the repo to the last commit",
-    "release": "Clean, build, test, publish docs, and prepare release (a one-step publish process)"
+    "prepublish": "npm run build",
+    "release": "npm run reset && npm run docs:publish && npm run changelog",
+    "reset": "git clean -dfx && git reset --hard && npm install"
   },
   "engines": {
     "node": ">=4.5"
@@ -46,7 +35,6 @@
     "gh-pages": "^1.0.0",
     "hash.js": "^1.0.3",
     "mkdirp": "^0.5.1",
-    "npm-scripts-info": "^0.3.6",
     "opn-cli": "^3.1.0",
     "sleep-ms": "^2.0.1",
     "standard-version": "^4.0.0",
@@ -57,21 +45,9 @@
     "typescript": "^2.4.1"
   },
   "keywords": [
-    "async",
-    "await",
-    "boilerplate",
-    "conventional-changelog",
     "ES6",
-    "ES7",
-    "library",
-    "javascript-modules",
     "node",
-    "starter",
-    "template",
-    "tslint",
-    "typedoc",
-    "typescript",
-    "typings"
+    "typescript"
   ],
   "dependencies": {
     "tslib": "^1.6.0"
