@@ -1,8 +1,6 @@
 node_modules
 build
-test
 src/**.js
 
-coverage
-.nyc_output
 *.log
+.idea
