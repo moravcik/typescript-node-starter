@@ -1,12 +1,15 @@
 {
-  "name": "typescript-node-starter",
+  "name": "@solargis/typescript-node-starter",
   "version": "1.4.3",
   "private": true,
   "description": "A typescript starter for building javascript libraries and projects",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/moravcik/typescript-node-starter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moravcik/typescript-node-starter.git"
+  },
   "author": "Michal Moravcik <michal.moravcik@solargis.com>",
   "license": "MIT",
   "scripts": {
@@ -73,5 +76,12 @@
   ],
   "dependencies": {
     "tslib": "^1.6.0"
+  },
+  "bugs": {
+    "url": "https://github.com/moravcik/typescript-node-starter/issues"
+  },
+  "homepage": "https://github.com/moravcik/typescript-node-starter#readme",
+  "directories": {
+    "example": "examples"
   }
 }
