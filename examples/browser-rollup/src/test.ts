@@ -1,5 +1,5 @@
 // Note: we're not using the double method, so it should be excluded from the bundle
-import { power, asyncABC } from 'typescript-starter'
+import { power, asyncABC } from '@solargis/typescript-starter'
 
 let output = ''
 
