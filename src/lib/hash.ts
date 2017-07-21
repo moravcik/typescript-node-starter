@@ -1,7 +1,9 @@
 import { createHash } from 'crypto'
 
 /**
- * Calculate the sha256 digest of a string. On Node.js, this will use the native module, in the browser, it will fall back to a pure javascript implementation.
+ * Calculate the sha256 digest of a string.
+ *
+ * On Node.js, this will use the native module, in the browser, it will fall back to a pure javascript implementation.
  *
  * ### Example (es imports)
  * ```js

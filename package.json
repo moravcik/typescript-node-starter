@@ -23,7 +23,9 @@
     "docs": "npm run docs:html && opn build/docs/index.html",
     "docs:html": "typedoc src/index.ts --excludePrivate --mode file --theme minimal --out build/docs",
     "docs:publish": "npm run docs:html && gh-pages -d build/docs",
-    "postversion": "npm run build && npm publish --access restricted && npm run docs:publish"
+    "preversion": "git push",
+    "version": "npm run build && npm publish --access restricted",
+    "postversion": "git push --follow-tags && npm run docs:publish"
   },
   "engines": {
     "node": ">=4.5"
@@ -42,8 +44,7 @@
     "opn-cli": "^3.1.0",
     "sleep-ms": "^2.0.1",
     "trash-cli": "^1.4.0",
-    "tslint": "^5.4.3",
-    "tslint-config-standard": "^6.0.1",
+    "tslint": "^5.5.0",
     "typedoc": "^0.7.1",
     "typescript": "^2.4.1"
   },

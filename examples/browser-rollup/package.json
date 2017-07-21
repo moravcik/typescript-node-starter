@@ -1,5 +1,5 @@
 {
-  "name": "typescript-starter-example-browser",
+  "name": "typescript-starter-example-browser-rollup",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {

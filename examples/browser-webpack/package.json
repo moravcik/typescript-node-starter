@@ -1,0 +1,47 @@
+{
+  "name": "typescript-starter-example-browser-webpack",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --port=4200",
+    "build": "webpack",
+    "lint": "tslint --project . --type-check src/**/*.ts"
+  },
+  "private": true,
+  "dependencies": {
+    "@solargis/typescript-starter": "^1.5.1",
+    "core-js": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "~6.0.60",
+    "autoprefixer": "^6.5.3",
+    "awesome-typescript-loader": "^3.2.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.26.1",
+    "cssnano": "^3.10.0",
+    "exports-loader": "^0.6.3",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.10.0",
+    "html-webpack-plugin": "^2.29.0",
+    "json-loader": "^0.5.4",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^0.13.0",
+    "postcss-url": "^5.1.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^4.1.1",
+    "script-loader": "^0.7.0",
+    "source-map-loader": "^0.1.5",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.4.0",
+    "ts-loader": "^2.3.1",
+    "ts-node": "~2.0.0",
+    "tslint": "~4.5.0",
+    "typescript": "^2.4.2",
+    "url-loader": "^0.5.7",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "~2.3.0"
+  }
+}

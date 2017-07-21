@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
     "start": "node build/test.js",
-    "build": "tsc"
+    "start:ts-node": "ts-node src/test.ts",
+    "start:ts-node/register": "node src/index.js"
   },
   "devDependencies": {
     "@types/node": "^7.0.5",
+    "ts-node": "^3.2.1",
     "typescript": "^2.1.6"
   },
   "dependencies": {
