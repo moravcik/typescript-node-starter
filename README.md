@@ -44,7 +44,7 @@ Private dependencies will be resolved as well.
 Build entire project - in _commonjs_ and _es6_ standard:
 
 ```
-npm build
+npm run build
 ```
 
 To enable watch mode add `-w` to `build:main` or `build:module` script in `package.json`
