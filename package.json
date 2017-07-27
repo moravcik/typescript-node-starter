@@ -1,6 +1,6 @@
 {
   "name": "@solargis/typescript-starter",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "A typescript starter for building javascript libraries and projects",
   "author": "Michal Moravcik <michal.moravcik@solargis.com>",
   "license": "MIT",
