@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "http-server -c-1 ./build/ -o",
-    "build": "rollup -c && cpy src/index.html build/"
+    "build": "rollup -c && cpy src/index.html build/",
+    "prestart": "npm run build",
+    "start": "http-server -c-1 ./build/ -o"
   },
   "devDependencies": {
     "cpy-cli": "^1.0.1",

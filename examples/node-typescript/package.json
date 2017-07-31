@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "prestart": "tsc",
     "start": "node build/test.js",
     "start:ts-node": "ts-node src/test.ts",
     "start:ts-node/register": "node src/index.js"
