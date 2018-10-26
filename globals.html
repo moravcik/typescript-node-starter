@@ -909,16 +909,16 @@ img { max-width: 100%; }
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
-		<li class=" tsd-kind-function">
+		<li class=" tsd-kind-function tsd-is-external">
 			<a href="globals.html#asyncabc" class="tsd-kind-icon">asyncABC</a>
 		</li>
-		<li class=" tsd-kind-function">
+		<li class=" tsd-kind-function tsd-is-external">
 			<a href="globals.html#double" class="tsd-kind-icon">double</a>
 		</li>
-		<li class=" tsd-kind-function">
+		<li class=" tsd-kind-function tsd-is-external">
 			<a href="globals.html#power" class="tsd-kind-icon">power</a>
 		</li>
-		<li class=" tsd-kind-function">
+		<li class=" tsd-kind-function tsd-is-external">
 			<a href="globals.html#sha256" class="tsd-kind-icon">sha256</a>
 		</li>
 	</ul>
@@ -951,23 +951,19 @@ img { max-width: 100%; }
 			<h3 id="login-to-npm">Login to NPM</h3>
 			<p>Run command <code>npm login</code>, which will ask for credentials (search for &#39;cloud solutions&#39; on wiki). When successful, npm token will be stored in <code>~/.npmrc</code> file</p>
 			<h3 id="install-dependencies">Install dependencies</h3>
-			<pre><code>npm <span class="hljs-keyword">install</span>
-</code></pre><p>Private dependencies will be resolved as well.</p>
+			<pre><code>npm <span class="hljs-keyword">install</span></code></pre><p>Private dependencies will be resolved as well.</p>
 			<h3 id="build-project">Build project</h3>
 			<p>Build entire project - in <em>commonjs</em> and <em>es6</em> standard:</p>
-			<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> build</span>
-</code></pre><p>To enable watch mode add <code>-w</code> to <code>build:main</code> or <code>build:module</code> script in <code>package.json</code></p>
+			<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> build</span></code></pre><p>To enable watch mode add <code>-w</code> to <code>build:main</code> or <code>build:module</code> script in <code>package.json</code></p>
 			<h2 id="enable-stronger-type-checking-recommended-">Enable stronger type checking (recommended)</h2>
 			<p>To enable additional Typescript type checking features (a good idea for mission-critical or large projects), uncomment &quot;strict compilerOptions&quot; in <code>tsconfig.json</code>.</p>
 			<h2 id="generateyour-api-docs">Generateyour API docs</h2>
 			<p>The src folder is analyzed and documentation is automatically generated using <a href="https://github.com/TypeStrong/typedoc">typedoc</a>.</p>
-			<pre><code class="lang-bash">npm run docs
-</code></pre>
+			<pre><code class="language-bash">npm run docs</code></pre>
 			<p>This command generates API documentation for your library in HTML format and opens it in a browser.</p>
 			<p>Since types are tracked by Typescript, there&#39;s no need to indicate types in JSDoc format. For more information, see the <a href="http://typedoc.org/guides/doccomments/">typedoc documentation</a>.</p>
 			<p>To generate and publish your documentation to <a href="https://pages.github.com/">GitHub Pages</a> use the following command:</p>
-			<pre><code class="lang-bash">npm run docs:publish
-</code></pre>
+			<pre><code class="language-bash">npm run docs:publish</code></pre>
 			<p>Once published, your documentation should be available at the proper GitHub Pages URL for your repo. See <a href="https://bitjson.github.io/typescript-starter/">this repo&#39;s GitHub Pages</a> for an example.</p>
 			<p align="center">
 				<img height="500" alt="typedoc documentation example" src="https://cloud.githubusercontent.com/assets/904007/22909419/085b9e38-f222-11e6-996e-c7a86390478c.png">
@@ -996,12 +992,11 @@ img { max-width: 100%; }
   docs
     Generate HTML API documentation <span class="hljs-keyword">and</span> <span class="hljs-built_in">open</span> <span class="hljs-keyword">it</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">a</span> browser
   docs:publish
-    Generate HTML API documentation <span class="hljs-keyword">and</span> push <span class="hljs-keyword">it</span> <span class="hljs-built_in">to</span> GitHub Pages (gh-pages branch)
-</code></pre><h2 id="notes">Notes</h2>
+    Generate HTML API documentation <span class="hljs-keyword">and</span> push <span class="hljs-keyword">it</span> <span class="hljs-built_in">to</span> GitHub Pages (gh-pages branch)</code></pre><h2 id="notes">Notes</h2>
 			<h3 id="multiple-builds-main-and-module-">Multiple builds (<code>main</code> and <code>module</code>)</h3>
 			<p>The <code>src</code> of <code>typescript-starter</code> is compiled into two separate builds: <code>main</code> and <code>module</code>. The <code>main</code> build is <a href="https://github.com/bitjson/typescript-starter/blob/master/tsconfig.json#L8">configured to use the CommonJS module system</a>, while the <code>module</code> build <a href="https://github.com/bitjson/typescript-starter/blob/master/config/tsconfig.module.json">uses the new ES6 module system</a>.</p>
 			<p>Because Node.js does not yet support the ES6 module system, Node.js projects which depend on typescript-starter will follow the <code>main</code> field in <a href="https://github.com/bitjson/typescript-starter/blob/master/package.json"><code>package.json</code></a>. Tools which support the new system (like <a href="https://github.com/rollup/rollup">Rollup</a>) will follow the <code>module</code> field, giving them the ability to statically analyze typescript-starter. When building for the browser, newer tools follow the <code>browser</code> field, which will resolve to the browser build&#39;s ES6 module.</p>
-			<h3 id="dependency-on-tslib-">Dependency on <code>tslib</code></h3>
+			<h3 id="dependency-on-tslib">Dependency on <code>tslib</code></h3>
 			<p>By default, this project requires <a href="https://github.com/Microsoft/tslib">tslib</a> as a dependency. This is the recommended way to use Typescript&#39;s es6 &amp; es7 transpiling for sizable projects, but you can remove this dependency by removing the <code>importHelpers</code> compiler option in <code>tsconfig.json</code>. Depending on your usage, this may increase the size of your library significantly, as the Typescript compiler will inject it&#39;s helper functions directly into every file which uses them. (See also: <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html"><code>noEmitHelpers</code> &rarr;</a>)</p>
 			<h3 id="targeting-older-environments">Targeting older environments</h3>
 			<p>By default, this library targets environments with native (or already-polyfilled) support for es6 features. If your library needs to target Internet Explorer, outdated Android browsers, or versions of Node older than v4, you may need to change the <code>target</code> in <code>tsconfig.json</code> to <code>es5</code> (rather than <code>es6</code>) and bring in a Promise polyfill (such as <a href="https://github.com/stefanpenner/es6-promise">es6-promise</a>).</p>
@@ -1011,31 +1006,31 @@ img { max-width: 100%; }
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
-					<section class="tsd-index-section ">
+					<section class="tsd-index-section tsd-is-external">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-function"><a href="globals.html#asyncabc" class="tsd-kind-icon">asyncABC</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#double" class="tsd-kind-icon">double</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#power" class="tsd-kind-icon">power</a></li>
-							<li class="tsd-kind-function"><a href="globals.html#sha256" class="tsd-kind-icon">sha256</a></li>
+							<li class="tsd-kind-function tsd-is-external"><a href="globals.html#asyncabc" class="tsd-kind-icon">asyncABC</a></li>
+							<li class="tsd-kind-function tsd-is-external"><a href="globals.html#double" class="tsd-kind-icon">double</a></li>
+							<li class="tsd-kind-function tsd-is-external"><a href="globals.html#power" class="tsd-kind-icon">power</a></li>
+							<li class="tsd-kind-function tsd-is-external"><a href="globals.html#sha256" class="tsd-kind-icon">sha256</a></li>
 						</ul>
 					</section>
 				</div>
 			</section>
 		</section>
-		<section class="tsd-panel-group tsd-member-group ">
+		<section class="tsd-panel-group tsd-member-group tsd-is-external">
 			<h2>Functions</h2>
-			<section class="tsd-panel tsd-member tsd-kind-function">
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
 				<a name="asyncabc" class="tsd-anchor"></a>
 				<h3>asyncABC</h3>
-				<ul class="tsd-signatures tsd-kind-function">
+				<ul class="tsd-signatures tsd-kind-function tsd-is-external">
 					<li class="tsd-signature tsd-kind-icon">asyncABC<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/solargis/typescript-starter/blob/c22ae86/src/lib/async.ts#L20">lib/async.ts:20</a></li>
+								<li>Defined in <a href="https://github.com/solargis/typescript-starter/blob/42d0c35/src/lib/async.ts#L20">lib/async.ts:20</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1043,32 +1038,30 @@ img { max-width: 100%; }
 								<p>A sample async function (to demo Typescript&#39;s es7 async/await downleveling).</p>
 							</div>
 							<h3 id="example-es-imports-">Example (es imports)</h3>
-							<pre><code class="lang-js"><span class="hljs-keyword">import</span> { asyncABC } <span class="hljs-keyword">from</span> <span class="hljs-string">'typescript-starter'</span>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { asyncABC } <span class="hljs-keyword">from</span> <span class="hljs-string">'typescript-starter'</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">await</span> asyncABC())
-<span class="hljs-comment">// =&gt; ['a','b','c']</span>
-</code></pre>
+<span class="hljs-comment">// =&gt; ['a','b','c']</span></code></pre>
 							<h3 id="example-commonjs-">Example (commonjs)</h3>
-							<pre><code class="lang-js"><span class="hljs-keyword">var</span> double = <span class="hljs-built_in">require</span>(<span class="hljs-string">'typescript-starter'</span>).asyncABC;
+							<pre><code class="language-js"><span class="hljs-keyword">var</span> double = <span class="hljs-built_in">require</span>(<span class="hljs-string">'typescript-starter'</span>).asyncABC;
 asyncABC().then(<span class="hljs-built_in">console</span>.log);
-<span class="hljs-comment">// =&gt; ['a','b','c']</span>
-</code></pre>
+<span class="hljs-comment">// =&gt; ['a','b','c']</span></code></pre>
 						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						<p>a Promise which should contain <code>[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</code></p>
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
 				<a name="double" class="tsd-anchor"></a>
 				<h3>double</h3>
-				<ul class="tsd-signatures tsd-kind-function">
+				<ul class="tsd-signatures tsd-kind-function tsd-is-external">
 					<li class="tsd-signature tsd-kind-icon">double<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/solargis/typescript-starter/blob/c22ae86/src/lib/number.ts#L22">lib/number.ts:22</a></li>
+								<li>Defined in <a href="https://github.com/solargis/typescript-starter/blob/42d0c35/src/lib/number.ts#L22">lib/number.ts:22</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1076,15 +1069,13 @@ asyncABC().then(<span class="hljs-built_in">console</span>.log);
 								<p>Multiplies a value by 2. (Also a full example of Typedoc&#39;s functionality.)</p>
 							</div>
 							<h3 id="example-es-module-">Example (es module)</h3>
-							<pre><code class="lang-js"><span class="hljs-keyword">import</span> { double } <span class="hljs-keyword">from</span> <span class="hljs-string">'typescript-starter'</span>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { double } <span class="hljs-keyword">from</span> <span class="hljs-string">'typescript-starter'</span>
 <span class="hljs-built_in">console</span>.log(double(<span class="hljs-number">4</span>))
-<span class="hljs-comment">// =&gt; 8</span>
-</code></pre>
+<span class="hljs-comment">// =&gt; 8</span></code></pre>
 							<h3 id="example-commonjs-">Example (commonjs)</h3>
-							<pre><code class="lang-js"><span class="hljs-keyword">var</span> double = <span class="hljs-built_in">require</span>(<span class="hljs-string">'typescript-starter'</span>).double;
+							<pre><code class="language-js"><span class="hljs-keyword">var</span> double = <span class="hljs-built_in">require</span>(<span class="hljs-string">'typescript-starter'</span>).double;
 <span class="hljs-built_in">console</span>.log(double(<span class="hljs-number">4</span>))
-<span class="hljs-comment">// =&gt; 8</span>
-</code></pre>
+<span class="hljs-comment">// =&gt; 8</span></code></pre>
 							<dl class="tsd-comment-tags">
 								<dt>anothernote</dt>
 								<dd><p>Some other value.</p>
@@ -1105,17 +1096,17 @@ asyncABC().then(<span class="hljs-built_in">console</span>.log);
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
 				<a name="power" class="tsd-anchor"></a>
 				<h3>power</h3>
-				<ul class="tsd-signatures tsd-kind-function">
+				<ul class="tsd-signatures tsd-kind-function tsd-is-external">
 					<li class="tsd-signature tsd-kind-icon">power<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, exponent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/solargis/typescript-starter/blob/c22ae86/src/lib/number.ts#L43">lib/number.ts:43</a></li>
+								<li>Defined in <a href="https://github.com/solargis/typescript-starter/blob/42d0c35/src/lib/number.ts#L43">lib/number.ts:43</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1123,15 +1114,13 @@ asyncABC().then(<span class="hljs-built_in">console</span>.log);
 								<p>Raise the value of the first parameter to the power of the second using the es7 <code>**</code> operator.</p>
 							</div>
 							<h3 id="example-es-module-">Example (es module)</h3>
-							<pre><code class="lang-js"><span class="hljs-keyword">import</span> { power } <span class="hljs-keyword">from</span> <span class="hljs-string">'typescript-starter'</span>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { power } <span class="hljs-keyword">from</span> <span class="hljs-string">'typescript-starter'</span>
 <span class="hljs-built_in">console</span>.log(power(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>))
-<span class="hljs-comment">// =&gt; 8</span>
-</code></pre>
+<span class="hljs-comment">// =&gt; 8</span></code></pre>
 							<h3 id="example-commonjs-">Example (commonjs)</h3>
-							<pre><code class="lang-js"><span class="hljs-keyword">var</span> power = <span class="hljs-built_in">require</span>(<span class="hljs-string">'typescript-starter'</span>).power;
+							<pre><code class="language-js"><span class="hljs-keyword">var</span> power = <span class="hljs-built_in">require</span>(<span class="hljs-string">'typescript-starter'</span>).power;
 <span class="hljs-built_in">console</span>.log(power(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>))
-<span class="hljs-comment">// =&gt; 8</span>
-</code></pre>
+<span class="hljs-comment">// =&gt; 8</span></code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
@@ -1146,17 +1135,17 @@ asyncABC().then(<span class="hljs-built_in">console</span>.log);
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-member tsd-kind-function">
+			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
 				<a name="sha256" class="tsd-anchor"></a>
 				<h3>sha256</h3>
-				<ul class="tsd-signatures tsd-kind-function">
+				<ul class="tsd-signatures tsd-kind-function tsd-is-external">
 					<li class="tsd-signature tsd-kind-icon">sha256<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/solargis/typescript-starter/blob/c22ae86/src/lib/hash.ts#L17">lib/hash.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/solargis/typescript-starter/blob/42d0c35/src/lib/hash.ts#L17">lib/hash.ts:17</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1165,10 +1154,9 @@ asyncABC().then(<span class="hljs-built_in">console</span>.log);
 							</div>
 							<p>On Node.js, this will use the native module, in the browser, it will fall back to a pure javascript implementation.</p>
 							<h3 id="example-es-imports-">Example (es imports)</h3>
-							<pre><code class="lang-js"><span class="hljs-keyword">import</span> { sha256 } <span class="hljs-keyword">from</span> <span class="hljs-string">'typescript-starter'</span>
+							<pre><code class="language-js"><span class="hljs-keyword">import</span> { sha256 } <span class="hljs-keyword">from</span> <span class="hljs-string">'typescript-starter'</span>
 sha256(<span class="hljs-string">'test'</span>)
-<span class="hljs-comment">// =&gt; '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08'</span>
-</code></pre>
+<span class="hljs-comment">// =&gt; '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08'</span></code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
